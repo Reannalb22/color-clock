@@ -27,17 +27,18 @@ window.onload = function(){
 
 			minutes = ( minutes < 10 ? "0"  : "") + minutes
 			seconds = (seconds < 10 ? "0" : "") + seconds 
-		var hex = (minutes+1 * 27951)-(seconds * 8)
+		var hex = (minutes+1 * 17951)-(seconds * 8)
 			h = hex.toString(16)
 			return h
 	}
+	console.log(setHex())
 
-	// var progressBar = function(){
-	// 	var now = new Date(),
-	// 		seconds = now.getSeconds()
-	// 		seconds = (seconds < 10 ? "0" : "") + seconds 
-	// 	progressID.innerHTML = "<div>" + seconds + "</div>"
-	// }
+	var progressBar = function(){
+		var now = new Date(),
+			seconds = now.getSeconds()
+			// seconds = (seconds < 10 ? "0" : "") + seconds 
+		progressId.style.width = seconds * 3 + "px"
+	}
 
 	var setGradient = function() {
 		bodyId.style.background = "-webkit-radial-gradient(center, circle cover, #FFFFFF, #" + setHex() + ")"  
@@ -51,7 +52,7 @@ window.onload = function(){
 		clock();
 		setGradient();
 		showColor();
-		// progress();
+		progressBar();
 	}
 
 	var interval = function() {
