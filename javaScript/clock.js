@@ -7,6 +7,7 @@ window.onload = function(){
 		colorId = document.getElementById("hexColor");
 		progressId = document.getElementById("progress");
 
+	//set clock
 	var clock = function() {
 		var now = new Date(),
 			hour = now.getHours(),
@@ -20,6 +21,7 @@ window.onload = function(){
 		clockId.innerHTML = currentTime;
 	}
 
+	//set hex
 	var setHex = function() {
 		var now = new Date(),
 			minutes = now.getMinutes(),
@@ -27,23 +29,25 @@ window.onload = function(){
 
 			minutes = ( minutes < 10 ? "0"  : "") + minutes
 			seconds = (seconds < 10 ? "0" : "") + seconds 
-		var hex = (minutes+1 * 17951)-(seconds * 8)
+		var hex = (minutes+1 * 22000)-(seconds * 2)
 			h = hex.toString(16)
 			return h
 	}
 	console.log(setHex())
 
+	//create progress bar
 	var progressBar = function(){
 		var now = new Date(),
-			seconds = now.getSeconds()
-			// seconds = (seconds < 10 ? "0" : "") + seconds 
-		progressId.style.width = seconds * 3 + "px"
+			seconds = now.getSeconds() 
+		progressId.style.width = seconds * 3.3 + "px"
 	}
 
+	//set radial gradient
 	var setGradient = function() {
 		bodyId.style.background = "-webkit-radial-gradient(center, circle cover, #FFFFFF, #" + setHex() + ")"  
 	}
 
+	//hex text
 	var showColor = function(){
 		colorId.innerHTML = "<p>" + setHex() + "</p>"
 	}
