@@ -29,7 +29,7 @@ window.onload = function(){
 
 			minutes = ( minutes < 10 ? "0"  : "") + minutes
 			seconds = (seconds < 10 ? "0" : "") + seconds 
-		var hex = (minutes+1 * 22000)-(seconds * 2)
+		var hex = (minutes+1 * 200000)-(seconds * 2)
 			h = hex.toString(16)
 			return h
 	}
